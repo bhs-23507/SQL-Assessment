@@ -5,7 +5,7 @@ import sqlite3
 DATABASE = "company.db"
 
 def print_table_header():
-    print(f"company name                 market cap          foun.year    foun.name             sector")
+    print(f"company name                 market cap          foun.year    foun.name               sector")
 
 # Functions
 # Function to print all companies ordered by company id in ascending order
