@@ -4,7 +4,6 @@ import sqlite3
 # What the database is
 DATABASE = "company.db"
 
-# Non-Repetitive Database Header
 def print_table_header():
     print(f"company name                 market cap          foun.year    foun.name               sector")
 
@@ -141,9 +140,9 @@ while True:
     # If the user inputted 8, print all the market cap with more than a trillion
     elif user_input == "8":
         print_all_companies_with_market_cap_more_than_trillion()
-    # If the user inputted 9, break the loop and exit
+    # If the user inputted 9, stop the loop and exit
     elif user_input == "9":
         break
-    # Else if the user enters any other number, alphabet or symbol, print it's not an option.
+    # Else if the user enters any other number or alphabet, tell them that it's not an option.
     else:
         print("That was not an option\n")
