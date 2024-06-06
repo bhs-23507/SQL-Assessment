@@ -6,7 +6,7 @@ DATABASE = "company.db"
 
 # Non-Repetitive Database Header
 def print_table_header():
-    print(f"company name                 market cap          foun.year    foun.name               sector")
+    print(f"company name                 market cap          founder year    founder name            sector")
 
 # Functions
 # Function to print all companies ordered by company id in ascending order
@@ -19,7 +19,7 @@ def print_all_companies():
     results = cursor.fetchall()
     print_table_header()
     for company in results:
-        print(f"{company[1]:<29}{company[2]:<20}{company[3]:<13}{company[4]:<24}{company[5]:<10}")
+        print(f"{company[1]:<29}{company[2]:<20}{company[3]:<16}{company[4]:<24}{company[5]:<10}")
     db.close()
 
 # Function to print all the tables and information of the first company
@@ -32,7 +32,7 @@ def print_all_info_of_first_company():
     results = cursor.fetchall()
     print_table_header()
     for company in results:
-        print(f"{company[1]:<29}{company[2]:<20}{company[3]:<13}{company[4]:<24}{company[5]:<10}")
+        print(f"{company[1]:<29}{company[2]:<20}{company[3]:<16}{company[4]:<24}{company[5]:<10}")
     db.close()
 
 # Function to print all the information of the top three companies
@@ -45,7 +45,7 @@ def print_all_info_of_top_three_companies():
     results = cursor.fetchall()
     print_table_header()
     for company in results:
-        print(f"{company[1]:<29}{company[2]:<20}{company[3]:<13}{company[4]:<24}{company[5]:<10}")
+        print(f"{company[1]:<29}{company[2]:<20}{company[3]:<16}{company[4]:<24}{company[5]:<10}")
     db.close()
 
 # Function to print all the companies sorted by the founding year in descending order
@@ -58,7 +58,7 @@ def print_all_companies_sorted_by_founding_year():
     results = cursor.fetchall()
     print_table_header()
     for company in results:
-        print(f"{company[1]:<29}{company[2]:<20}{company[3]:<13}{company[4]:<24}{company[5]:<10}")
+        print(f"{company[1]:<29}{company[2]:<20}{company[3]:<16}{company[4]:<24}{company[5]:<10}")
     db.close()
 
 # Function to print all the companies with the sector, Technology
@@ -71,7 +71,7 @@ def print_all_companies_with_sector_Technology():
     results = cursor.fetchall()
     print_table_header()
     for company in results:
-        print(f"{company[1]:<29}{company[2]:<20}{company[3]:<13}{company[4]:<24}{company[5]:<10}")
+        print(f"{company[1]:<29}{company[2]:<20}{company[3]:<16}{company[4]:<24}{company[5]:<10}")
     db.close()
 
 # Function to print all the companies sorted by market cap in descending order
@@ -84,7 +84,7 @@ def print_all_companies_sorted_by_market_cap():
     results = cursor.fetchall()
     print_table_header()
     for company in results:
-        print(f"{company[1]:<29}{company[2]:<20}{company[3]:<13}{company[4]:<24}{company[5]:<10}")
+        print(f"{company[1]:<29}{company[2]:<20}{company[3]:<16}{company[4]:<24}{company[5]:<10}")
     db.close()
 
 # Function to print all the information of the top five companies
@@ -97,7 +97,7 @@ def print_all_info_of_top_five_companies():
     results = cursor.fetchall()
     print_table_header()
     for company in results:
-        print(f"{company[1]:<29}{company[2]:<20}{company[3]:<13}{company[4]:<24}{company[5]:<10}")
+        print(f"{company[1]:<29}{company[2]:<20}{company[3]:<16}{company[4]:<24}{company[5]:<10}")
     db.close()
 
 # Function to print all the companies with a market cap more than a trillion
@@ -110,7 +110,7 @@ def print_all_companies_with_market_cap_more_than_trillion():
     results = cursor.fetchall()
     print_table_header()
     for company in results:
-        print(f"{company[1]:<29}{company[2]:<20}{company[3]:<13}{company[4]:<24}{company[5]:<10}")
+        print(f"{company[1]:<29}{company[2]:<20}{company[3]:<16}{company[4]:<24}{company[5]:<10}")
     db.close()
 
 # Main code
