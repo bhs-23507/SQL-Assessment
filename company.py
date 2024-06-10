@@ -113,10 +113,24 @@ def print_all_companies_with_market_cap_more_than_trillion():
         print(f"{company[1]:<29}{company[2]:<20}{company[3]:<16}{company[4]:<24}{company[5]:<10}")
     db.close()
 
+def print_add_new_company():
+    "add a new company to the database"
+    db = sqlite3.connect(DATABASE)
+    cursor = db.cursor()
+    company_name = input("Enter your company name: ")
+    market_cap = input("Enter your market cap: ")
+    founder_year = input("Enter your founding year: ")
+    founder_name = input("Enter your founder name: ")
+    sector = input("Enter your sector: ")
+    sql = "INSERT INTO company (company_name, market_cap, founder_year, founder_name, sector) VALUES (?, ?, ?, ?, ?);"
+    cursor.execute(sql, (company_name, market_cap, founder_year, founder_name, sector))
+    db.commit()
+    db.close()
+
 # Main code
 while True:
     # The user can choose options given, 1-10
-    user_input = input("\n1. Print all companies\n2. Print all information of the first company\n3. Print all information of the top three companies\n4. Print all companies sorted by founding year\n5. Print all companies with the sector Technology\n6. Print all companies sorted by market cap\n7. Print all information of the top five companies\n8. Print all companies with market cap more than a trillion\n9. Exit\n\n")
+    user_input = input("\n1. Print all companies\n2. Print all information of the first company\n3. Print all information of the top three companies\n4. Print all companies sorted by founding year\n5. Print all companies with the sector Technology\n6. Print all companies sorted by market cap\n7. Print all information of the top five companies\n8. Print all companies with market cap more than a trillion\n9. Insert your company into database\n10. Exit\n\n")
     # If the user inputted 1, print all companies
     if user_input == "1":
         print_all_companies()
@@ -141,8 +155,10 @@ while True:
     # If the user inputted 8, print all the market cap with more than a trillion
     elif user_input == "8":
         print_all_companies_with_market_cap_more_than_trillion()
-    # If the user inputted 9, break the loop and exit
     elif user_input == "9":
+        print_add_new_company()
+    # If the user inputted 9, break the loop and exit
+    elif user_input == "10":
         break
     # Else if the user enters any other number, alphabet or symbol, print it's not an option.
     else:
