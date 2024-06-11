@@ -122,7 +122,7 @@ def print_add_new_company():
     founder_year = input("Enter your founding year: ")
     founder_name = input("Enter your founder name: ")
     sector = input("Enter your sector: ")
-    sql = "INSERT INTO company (company_name, market_cap, founder_year, founder_name, sector) VALUES (?, ?, ?, ?, ?);"
+    sql = "INSERT INTO company (company_name, market_cap, founding_year, founder_name, sector) VALUES (?, ?, ?, ?, ?);"
     cursor.execute(sql, (company_name, market_cap, founder_year, founder_name, sector))
     db.commit()
     db.close()
