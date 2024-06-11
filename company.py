@@ -127,10 +127,20 @@ def print_add_new_company():
     db.commit()
     db.close()
 
+def print_delete_company():
+    "remove a company from the database"
+    db = sqlite3.connect(DATABASE)
+    cursor = db.cursor()
+    company_name = input("Enter the company name you want to remove: ")
+    sql = "DELETE FROM company WHERE company_name = ?"
+    cursor.execute(sql,(company_name))
+    db.commit()
+    db.close()
+
 # Main code
 while True:
     # The user can choose options given, 1-10
-    user_input = input("\n1. Print all companies\n2. Print all information of the first company\n3. Print all information of the top three companies\n4. Print all companies sorted by founding year\n5. Print all companies with the sector Technology\n6. Print all companies sorted by market cap\n7. Print all information of the top five companies\n8. Print all companies with market cap more than a trillion\n9. Insert your company into database\n10. Exit\n\n")
+    user_input = input("\n1. Print all companies\n2. Print all information of the first company\n3. Print all information of the top three companies\n4. Print all companies sorted by founding year\n5. Print all companies with the sector Technology\n6. Print all companies sorted by market cap\n7. Print all information of the top five companies\n8. Print all companies with market cap more than a trillion\n9. Insert your company into database\n10. Delete existing company\n11. Exit\n\n")
     # If the user inputted 1, print all companies
     if user_input == "1":
         print_all_companies()
@@ -155,10 +165,13 @@ while True:
     # If the user inputted 8, print all the market cap with more than a trillion
     elif user_input == "8":
         print_all_companies_with_market_cap_more_than_trillion()
+    # If the user inputs 9, add that new company from the user
     elif user_input == "9":
         print_add_new_company()
-    # If the user inputted 9, break the loop and exit
     elif user_input == "10":
+        print_delete_company()
+    # If the user inputted 9, break the loop and exit
+    elif user_input == "11":
         break
     # Else if the user enters any other number, alphabet or symbol, print it's not an option.
     else:
