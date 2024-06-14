@@ -6,7 +6,7 @@ DATABASE = "company.db"
 
 # Non-Repetitive Database Header
 def print_table_header():
-    print(f"company name                 market cap          founder year    founder name            sector")
+    print(f"company name                 market cap          founding year   founder name            sector")
 
 # Functions
 # Function to print all companies ordered by company id in ascending order
@@ -133,7 +133,7 @@ def print_delete_company():
     cursor = db.cursor()
     company_name = input("Enter the company name you want to remove: ")
     sql = "DELETE FROM company WHERE company_name = ?"
-    cursor.execute(sql,(company_name))
+    cursor.execute(sql,(company_name,))
     db.commit()
     db.close()
 
